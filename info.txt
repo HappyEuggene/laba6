@@ -1,0 +1,105 @@
+ Command being timed: "./main"
+        User time (seconds): 0.00
+        System time (seconds): 0.00
+        Percent of CPU this job got: 100%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 3456
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 136
+        Voluntary context switches: 1
+        Involuntary context switches: 0
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 0
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+        Command being timed: "./optimization"
+        User time (seconds): 0.00
+        System time (seconds): 0.00
+        Percent of CPU this job got: 100%
+        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+        Average shared text size (kbytes): 0
+        Average unshared data size (kbytes): 0
+        Average stack size (kbytes): 0
+        Average total size (kbytes): 0
+        Maximum resident set size (kbytes): 3456
+        Average resident set size (kbytes): 0
+        Major (requiring I/O) page faults: 0
+        Minor (reclaiming a frame) page faults: 135
+        Voluntary context switches: 1
+        Involuntary context switches: 0
+        Swaps: 0
+        File system inputs: 0
+        File system outputs: 0
+        Socket messages sent: 0
+        Socket messages received: 0
+        Signals delivered: 0
+        Page size (bytes): 4096
+        Exit status: 0
+
+
+ Performance counter stats for './main':
+
+              1,49 msec task-clock                       #    0,759 CPUs utilized
+                 0      context-switches                 #    0,000 /sec
+                 0      cpu-migrations                   #    0,000 /sec
+               125      page-faults                      #   84,139 K/sec
+   <not supported>      cycles
+   <not supported>      instructions
+   <not supported>      branches
+   <not supported>      branch-misses
+   <not supported>      L1-dcache-loads
+   <not supported>      L1-dcache-load-misses
+   <not supported>      LLC-loads
+   <not supported>      LLC-load-misses
+
+       0,001957846 seconds time elapsed
+
+       0,002006000 seconds user
+       0,000000000 seconds sys
+
+ Performance counter stats for './optimization':
+
+              1,46 msec task-clock                       #    0,749 CPUs utilized
+                 0      context-switches                 #    0,000 /sec
+                 0      cpu-migrations                   #    0,000 /sec
+               125      page-faults                      #   85,550 K/sec
+   <not supported>      cycles
+   <not supported>      instructions
+   <not supported>      branches
+   <not supported>      branch-misses
+   <not supported>      L1-dcache-loads
+   <not supported>      L1-dcache-load-misses
+   <not supported>      LLC-loads
+   <not supported>      LLC-load-misses
+
+       0,001952050 seconds time elapsed
+
+       0,002000000 seconds user
+       0,000000000 seconds sys
+
+Samples: 5  of event 'cpu-clock:ppp', Event count (approx.): 1250000
+Overhead  Command  Shared Object         Symbol
+  20,00%  main     ld-linux-x86-64.so.2  [.] do_lookup_x
+  20,00%  main     [unknown]             [k] 0xffffffff94093e3e
+  20,00%  main     [unknown]             [k] 0xffffffff942d3b10
+  20,00%  main     [unknown]             [k] 0xffffffff94621a02
+  20,00%  main     [unknown]             [k] 0xffffffff94c98b70
+
+Samples: 5  of event 'cpu-clock:ppp', Event count (approx.): 1250000
+Overhead  Command       Shared Object         Symbol
+  20,00%  optimization  ld-linux-x86-64.so.2  [.] _dl_relocate_object
+  20,00%  optimization  [unknown]             [k] 0xffffffff93d125c8
+  20,00%  optimization  [unknown]             [k] 0xffffffff93fbc753
+  20,00%  optimization  [unknown]             [k] 0xffffffff940afaeb
+  20,00%  optimization  [unknown]             [k] 0xffffffff94cadc71
+
