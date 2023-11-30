@@ -1,28 +1,26 @@
 sum(int):
-        pushq   %rbp
-        movq    %rsp, %rbp
-        subq    $16, %rsp
-        movl    %ecx, 16(%rbp)
-        movl    $0, -4(%rbp)
-        movl    -4(%rbp), %eax
-        movl    %eax, -8(%rbp)
-        movl    $0, -12(%rbp)
+        push    rbp
+        mov     rbp, rsp
+        mov     DWORD PTR [rbp-20], edi
+        mov     DWORD PTR [rbp-4], 0
+        mov     eax, DWORD PTR [rbp-4]
+        mov     DWORD PTR [rbp-8], eax
+        mov     DWORD PTR [rbp-12], 0
         jmp     .L2
 .L3:
-        movl    -8(%rbp), %edx
-        movl    -12(%rbp), %eax
-        addl    %edx, %eax
-        movl    %eax, -4(%rbp)
-        movl    -4(%rbp), %eax
-        movl    %eax, -8(%rbp)
-        movl    -8(%rbp), %eax
-        movl    %eax, -4(%rbp)
-        addl    $1, -12(%rbp)
+        mov     edx, DWORD PTR [rbp-8]
+        mov     eax, DWORD PTR [rbp-12]
+        add     eax, edx
+        mov     DWORD PTR [rbp-4], eax
+        mov     eax, DWORD PTR [rbp-4]
+        mov     DWORD PTR [rbp-8], eax
+        mov     eax, DWORD PTR [rbp-8]
+        mov     DWORD PTR [rbp-4], eax
+        add     DWORD PTR [rbp-12], 1
 .L2:
-        movl    -12(%rbp), %eax
-        cmpl    16(%rbp), %eax
+        mov     eax, DWORD PTR [rbp-12]
+        cmp     eax, DWORD PTR [rbp-20]
         jl      .L3
-        movl    -4(%rbp), %eax
-        addq    $16, %rsp
-        popq    %rbp
+        mov     eax, DWORD PTR [rbp-4]
+        pop     rbp
         ret
